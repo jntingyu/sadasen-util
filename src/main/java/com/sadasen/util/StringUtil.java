@@ -63,5 +63,14 @@ public class StringUtil {
 	public static String ifEmpty(String string, String defaultString) {
 		return isEmpty(string) ? defaultString : string;
 	}
+	
+	public static String concat(String separator, String... strs) {
+		StringBuilder builder = new StringBuilder();
+		for(String str : strs) {
+			builder.append(str+separator);
+		}
+		builder.deleteCharAt(builder.length()-1);
+		return builder.toString();
+	}
 
 }
